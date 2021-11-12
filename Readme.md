@@ -31,7 +31,7 @@ db.prueba.find(): Muestra los documentos de la columna, clave para nuestro proye
 
 ### Operador Mínimos 📋
 
-_¿Estos son todos?_
+_Estos son todos_
 
 ```
 - $and              - $gt
