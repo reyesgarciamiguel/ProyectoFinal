@@ -486,3 +486,23 @@ db.ventadiscos.find(
 
 
 db.musica.find({"exponentes.nuevaEra":{$exists:true, $eq:"Linkin Park"}},{genero:1, exponentes:1})
+
+
+/*15º Buscar opiniones mias con menos de 7,25 y que o cumpla la fecha de nacimiento o niños false*/
+
+
+db.musica.find( 
+        
+        { $and: 
+                [ 
+                        { miOpinion: {$lt: 7.25 }}, 
+                        
+                        {$or: 
+                                [
+                                        {nacimiento:{$lte:new Date("1990-01-01")}},
+                                        {niños:{$eq: false}}
+
+                                ]}
+                ]                
+                 
+        },{genero:1,miOpinion:1, niños:1,nacimiento:1} )

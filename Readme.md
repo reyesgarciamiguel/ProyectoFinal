@@ -28,3 +28,27 @@ db.prueba.insertMany([]): Añade varios documentos a la vez
 
 db.prueba.find(): Muestra los documentos de la columna, clave para nuestro proyecto
 ```
+
+### Operador Mínimos 📋
+
+_¿Estos son todos?_
+
+```
+- $and              - $gt
+
+- $gte              - $lt
+
+- $lte              - $nin
+
+- $eq               - $regex
+
+- $exists           - $Size
+
+- $not              - $nor
+
+- $in               - $all
+
+- $elemMatch        - $or
+
+- $ne
+```
