@@ -29,7 +29,7 @@ db.prueba.insertMany([]): Añade varios documentos a la vez
 db.prueba.find(): Muestra los documentos de la columna, clave para nuestro proyecto
 ```
 
-### Operador Mínimos 📋
+### Operadores Mínimos 📋
 
 _Estos son todos_
 
