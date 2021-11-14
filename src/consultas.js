@@ -12,7 +12,7 @@ en clase*/
 db.musica.find({genero:"Trap"})
 
 
-/*Ahora vamos con lo importante*/
+/*Ahora vamos con lo importante, aviso de que en todas la consultas se ha usado su debido .pretty() y $project*/
 
 /*1º Mi hermano de 7 años quiere saber que escucho con mis cascos pero quiero enseñarle cosas apropiadas para su edad y que a su vez aprenda de géneros de antes de su nacimiento
 a partir de el 2010 pero que no sean tan antiguos, 1960 para arriba. Solo quiero saber género y si es apto.
