@@ -170,3 +170,25 @@ db.musica.updateMany({},
 
 
 /*Cuando ejecutamos nos da la salida: { "acknowledged" : true, "matchedCount" : 10, "modifiedCount" : 10 }*/
+
+
+
+/*Esta salida coge $and con el $expr que afina la busqueda con el find cogiendo el $rand que proporciona valores random, $lt a la mitad los resultados random que puedan salir,
+no podrá ser igual al grupo The Beatles*/
+
+db.ventadiscos.find(
+        
+        {$and:
+                [
+        {  disco:"Platino" ,
+           $expr: { $lt: [0.5, {$rand: {} } ] }
+        },
+        {
+                artista:{$not:{$eq:"The Beatles"}}
+        }
+
+                ]},{ _id: 0, orden: 1, discos: 1,artista: 1 })
+
+
+/*{ "orden" : 1, "artista" : "Duki" }
+{ "orden" : 3, "artista" : "Jhay Cortez" }*/               

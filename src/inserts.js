@@ -55,6 +55,7 @@ db.musica.insertMany([
 
 /*Voy a meter otra base de datos de Discos platino, Oro, Uranio de diferentes artistas*/
 
+db.ventadiscos.deleteMany({})
 db.ventadiscos.insertMany([
 
 {orden: 1, disco:"Uranio", artista:"Raphael", album:"Ayer, Hoy y Siempre", ventas:50000000},
@@ -67,7 +68,8 @@ db.ventadiscos.insertMany([
 
 {orden: 1, disco:"Platino", artista:"Duki", album:"Desde el fin del mundo", ventas:1200000},
 {orden: 2, disco:"Platino", artista:"The Beatles", album:"Help!", ventas:2000000},
-{orden: 3, disco:"Platino", artista:"Jhay Cortez", album:"Timelezz", ventas:1400000}
+{orden: 3, disco:"Platino", artista:"Jhay Cortez", album:"Timelezz", ventas:1400000},
+{orden: 4, disco:"Platino", artista:"Myke Towers", album:"Like Myke", ventas:1800000}
 ])
 
 

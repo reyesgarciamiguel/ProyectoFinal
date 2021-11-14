@@ -53,7 +53,7 @@ db.musica.find( { $and:
     
     [
         { genero: { $nin: [ "Rock", "Blues" ] } },
-        { precioConcierto: {$lte: 250}}, 
+        { precioConcierto: {$lte: 250}},
     ] 
 },{genero:1, precioConcierto:1})
 
@@ -506,3 +506,5 @@ db.musica.find(
                 ]                
                  
         },{genero:1,miOpinion:1, niños:1,nacimiento:1} )
+
+     
