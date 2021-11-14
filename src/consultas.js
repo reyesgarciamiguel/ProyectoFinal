@@ -507,4 +507,39 @@ db.musica.find(
                  
         },{genero:1,miOpinion:1, niños:1,nacimiento:1} )
 
+        /*{ "_id" : ObjectId("6191233431f72c8e69c6fdc3"), "genero" : "Reggaeton", "nacimiento" : ISODate("1970-05-22T00:00:00Z"), "niños" : true, "miOpinion" : 6.13 }
+        { "_id" : ObjectId("6191233431f72c8e69c6fdc4"), "genero" : "Pop", "nacimiento" : ISODate("1926-03-20T00:00:00Z"), "niños" : true, "miOpinion" : 7 }
+        { "_id" : ObjectId("6191233431f72c8e69c6fdc6"), "genero" : "Rock", "nacimiento" : ISODate("1950-09-12T00:00:00Z"), "niños" : false, "miOpinion" : 6.63 }
+        { "_id" : ObjectId("6191233431f72c8e69c6fdc8"), "genero" : "Jazz", "nacimiento" : ISODate("1895-07-11T00:00:00Z"), "niños" : true, "miOpinion" : 7.01 }
+        { "_id" : ObjectId("6191233431f72c8e69c6fdc9"), "genero" : "Blues", "nacimiento" : ISODate("1912-12-01T00:00:00Z"), "niños" : true, "miOpinion" : 6.87 }*/
+
+
+     /*Nacimiento despues del 1990 o igual, que tenga una nota mia por encima de 7.25 o de los expertos de 7 y que el pais de origen no sea ni EEUU ni Alemania*/
      
+        db.musica.find( 
+        
+        { $and: 
+                [ 
+                        {nacimiento:{$gte:new Date("1990-01-01")}},
+                        
+                        {$or: 
+                                [
+                                        {miOpinion: {$gt: 7.25 }}, 
+                                        {notaExpertos:{$eq:7}}
+
+                                ]},
+                        {$or:
+                                [
+                                   {paisOrigen:{$ne:"EEUU"}},
+                                   {paisOrigen:{$ne:"Alemania"}}
+                                ]
+                        
+                        
+                        }
+                ]                
+                 
+        },{genero:1,miOpinion:1, niños:1,nacimiento:1,notaExpertos:1, paisOrigen:1} )
+
+
+        /*{ "_id" : ObjectId("6191233331f72c8e69c6fdc1"), "genero" : "Trap", "nacimiento" : ISODate("1990-03-23T00:00:00Z"), "niños" : false, "notaExpertos" : [ 4, 8, 10, 1 ], "miOpinion" : 9.2 }
+          { "_id" : ObjectId("6191233431f72c8e69c6fdc2"), "genero" : "Traplatino", "nacimiento" : ISODate("2006-02-13T00:00:00Z"), "niños" : false, "notaExpertos" : [ 1, 6, 9, 4.5 ], "miOpinion" : 8.23 }*/
